@@ -1,0 +1,107 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <title>Employee Attrition Predictor</title>
+    </head>
+<style>
+.container{
+width:100%;
+text-align:center;
+}
+.ml-container{
+width:100%;
+text-align:center;
+}
+
+input{
+font-size:1.0em;
+width:20%;
+text-align:center;
+}
+input placeholder{
+text-align:center;
+}
+button {
+  background-color: #f44336; /* Red */ 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+ <body>
+<style>
+body
+{
+background-image:url('../static/img.jpg');
+background-position: center;
+font-family:serif;
+background-size:cover;
+}
+</style>
+
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading' style="color:white;"><span class="heading_font">Employee Attrition Predictor</span></h2>
+            <div class='description'>
+    			<p style="color:white;">A Machine Learning Web App, Built with Flask</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+
+
+<input class="form-input" type="text" name="satisfaction_level" placeholder="Enter satisfaction level(0-1)"><br><br>
+<input class="form-input" type="text" name="last_evaluation" placeholder="Enter last evaluation(0-1)"><br><br>
+<input class="form-input" type="text" name="number_project" placeholder="Enter number of projects worked"><br><br>
+<input class="form-input" type="text" name="average_montly_hours" placeholder="Enter average montly hours"><br><br>
+
+<input class="form-input" type="text" name="time_spend_company" placeholder="Enter number of years worked at company"><br><br>
+
+<select id="Work_accident" name="Any work accidents?">
+<option value="">Any work accidents?</option>
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select><br><br>
+
+<select id="promotion_last_5years" name="Promotion in last 5years">
+<option value="">Promotion in last 5years</option>
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select><br><br>
+<select id="department" name="Select your department">
+    <option value="">Select your department</option>
+    <option value="7">technical</option>
+<option value="6">sales</option>
+<option value="5">product_mng</option>
+<option value="4">marketing</option>
+<option value="0">RandD</option>
+<option value="2">HR</option>
+<option value="1">accounting</option>
+<option value="3">management</option>
+  </select><br><br>
+
+<select id="salary" name="Select salary level">
+    <option value="">Select your salary Level</option>
+    <option value="1">Low</option>
+<option value="2">Medium</option>
+    <option value="0">High</option>
+   
+  </select><br><br>
+
+
+
+
+        		<button type="submit" class="my-cta-button">Predict</button>
+        	</form>
+    
+    </body>
+</html>

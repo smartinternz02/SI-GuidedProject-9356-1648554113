@@ -1,0 +1,51 @@
+
+
+
+
+<html lang="en" dir="ltr">
+	<head>
+		<title style="color:white;">Employee Attrition Predictor</title>
+	</head>
+<style>
+.container{
+width:100%;
+text-align:center;
+}
+.results{
+width:100%;
+text-align:center;
+}
+</style>
+    <body>
+<style>
+body
+{
+background-image:url('../static/img.jpg');
+background-position: center;
+font-family:serif;
+background-size:cover;
+}
+</style>
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading' style="color:white;" ><span class="heading_font">Employee Attrition Prediction</span></h2>
+            <div class='description'>
+    			<p style="color:white;>A Machine Learning Web App using Flask.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction_text==1 %}
+				<h1 style="color:white;">Prediction: <span class='danger'>Chance of employee leaving is high. Take immediate measures to save the spot.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='high.webp') }}" alt="High Image">
+			{% elif prediction_text==0 %}
+				<h1 style="color:white;">Prediction: <span class='safe'>Hooray!!!Chance of employee leaving is low!</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='low.webp') }}" alt="Low Image">
+			{% endif %}
+		</div>
+
+
+
+	</body>
+</html>
